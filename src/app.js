@@ -1,6 +1,5 @@
 const express = require('express');
 require('dotenv').config();
-const genderRoute = require('./routes/genderRoute');
 const studentModel = require('./routes/studentRoute')
 
 const cors = require('cors');
@@ -13,7 +12,6 @@ const corsOptions = {
 
 app.use(express.json());
 app.use(cors(corsOptions));
-app.use('/api/genres', genderRoute);
 app.use('/api/students', studentModel);
 
 app.use((error, req, res, next) => {

@@ -1,9 +1,6 @@
 const { Sequelize, DataTypes } = require('sequelize');
 const db = require('../config/database');
 
-// importar Gender en vez de GenderModel
-const { Gender } = require('./genderModel');
-
 const Student = db.define('Student', {
   id_est: {
     type: DataTypes.INTEGER,
@@ -46,19 +43,9 @@ const Student = db.define('Student', {
     type: DataTypes.STRING(20),
     allowNull: true,
   },
-  idgenero: {
-    type: DataTypes.INTEGER,
-    allowNull: true,
-    references: {
-      model: 'generos',
-      key: 'idgenero',
-    },
-  },
 }, {
   tableName: 'estudiantes',
   timestamps: false,
 });
-
-Student.belongsTo(Gender, { foreignKey: 'idgenero', as: 'genero' });
 
 module.exports = Student;

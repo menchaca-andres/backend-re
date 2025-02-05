@@ -1,13 +1,5 @@
 -- Name: db_re
 
--- Tabla: generos
-create table generos (
-	idgenero serial primary key,
-	nombregenero varchar(10)
-);
-
-select * from generos;
-
 -- Tabla: estudiantes
 create table estudiantes (
 	id_est serial primary key,
@@ -20,7 +12,6 @@ create table estudiantes (
 	ncel_est varchar(20),
 	coins_est text,
 	cont_est varchar(20),
-	idgenero int references generos(idgenero)
 );
 
 select * from estudiantes;
