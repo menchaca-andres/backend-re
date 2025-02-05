@@ -39,8 +39,8 @@ const Student = db.define('Student', {
     type: DataTypes.TEXT,
     allowNull: true,
   },
-  cont_est: {
-    type: DataTypes.STRING(20),
+  carrera_est: {
+    type: DataTypes.STRING(30),
     allowNull: true,
   },
 }, {
